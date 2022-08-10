@@ -1,0 +1,310 @@
+---
+title: "R Markdown Data Analysis of Cyclistic"
+output: 
+  html_document: 
+    highlight: espresso
+    theme: cerulean
+---
+
+# **LOAD PACKAGES**
+
+#### **TIDYVERSE**
+
+Load the tidyverse package as it includes the packages dplyr and readr which contains the function read_csv()
+
+```{r load tidyverse, message=TRUE, warning=FALSE}
+
+library(tidyverse)
+
+```
+
+
+#### **LUBRIDATE**
+
+Load the lubridate package to work with dates.
+
+```{r load lubridate, message=FALSE, warning=FALSE}
+
+library(lubridate)
+
+```
+
+
+#### **SCALES**
+
+Load the scales package to work with plots.
+
+```{r load scales, message=FALSE, warning=FALSE}
+
+library(scales)
+```
+
+#### **KNITR**
+
+Load the knitr package to work with 
+R Markdown documents and to use the function kable()
+
+```{r load knitr, message=FALSE, warning=FALSE}
+
+library(knitr)
+
+```
+
+
+# **IMPORT DATASET**
+
+The SQL Server table named "full_year_2021_V3" contained the Cyclistic dataset after data wrangling & data cleaning.  This dataset was then exported as a CSV file to the desktop computer.  This file is now being imported into R as a data frame titled "cyclistic_data".
+
+```{r import csv}
+cyclistic_data <- read_csv("sqlexport.csv") 
+
+```
+
+# **PREVIEW DATA FRAME**
+
+Preview the imported Cyclistic dataset such as the
+column names and data types by using the function glimpse().
+
+```{r preview data frame, echo=TRUE}
+
+glimpse(cyclistic_data)
+
+```
+
+Function str() displays the structure of the cyclistic dataset including the class and data type of each column.
+
+```{r preview structure}
+str(cyclistic_data)
+
+```
+
+
+# **START STATIONS FREQUENTLY USED**
+
+This Stacked Bar Chart displays the Top 10 start stations most frequently used by both casual & member riders.  Some start stations are used solely by member riders or solely by casual riders.  The X axis of this chart shows the start staton names while the Y axis displays the number of rides for each start station.
+
+```{r popular start stations}
+riders_start_stations <-
+  cyclistic_data[! is.na(cyclistic_data$start_station_id),] %>% 
+  count(member_casual,start_station_id, start_station_name) %>%
+  arrange(-n) %>% 
+  filter(n >= 15725) 
+
+```
+
+
+
+```{r }
+
+knitr::kable(riders_start_stations, "pipe")
+
+
+```
+
+
+
+
+```{r plot start stations}
+
+ggplot(data=riders_start_stations,
+       mapping= aes(x=reorder(start_station_name, -n), y=n, 
+                    fill=member_casual))+
+  geom_bar(stat="identity") +
+  theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+
+  labs(title= "Popular Start Stations", x="Start Stations",
+       y="Number of Rides")+
+  scale_y_continuous(breaks=seq(0,90000,10000))+
+  scale_fill_manual(values=c("navyblue", "cornflowerblue"))
+
+
+```
+
+
+
+# **BIKE ROUTES MOST FREQUENTLY USED BY RIDERS**
+
+There are 246,265 bike routes.  A route is defined as the pairing of a start station and end station for each bike ride.  This bar chart shows the most popular bike routes with the highest number of rides.
+
+```{r}
+cyclistic_data2 <- 
+  cyclistic_data %>% 
+  drop_na() %>% 
+  select(start_station_id, end_station_id, start_station_name, 
+         end_station_name, member_casual) %>% 
+  filter(start_station_id != end_station_id) %>% 
+  unite ("id_start_end", 
+         start_station_id, end_station_id, sep = "-") %>% 
+  unite ("name_start_end", 
+         start_station_name, end_station_name, sep = "-") %>%
+  count(id_start_end, name_start_end, member_casual) %>% 
+  arrange(-n)
+
+```
+
+
+```{r}
+
+cyclistic_data3 <- cyclistic_data2 %>% 
+                   top_n(10)
+
+```
+
+
+```{r}
+knitr::kable(cyclistic_data3, "pipe")
+```
+
+
+```{r}
+
+ggplot(data=cyclistic_data3,
+       mapping= aes(x=reorder(id_start_end, -n), y=n, 
+                    fill=id_start_end))+
+  geom_bar(stat="identity") +
+  theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+
+  labs(title= "Popular Bike Routes", x="Bike Routes",
+       y="Number of Rides")+
+  scale_y_continuous(breaks=seq(0,6000,500))+
+  annotate("text", x="13008-13022", y=5000, label="Route Lake Shore- Streeter Dr
+           Highest Rides", color="red", fontface="bold", size=3)
+
+```
+
+
+
+# **SEASON WITH HIGHEST NUMBER OF RIDES**
+
+This Scatter Plot displays number of rides by month for both casual and member riders.  The summer season
+in Chicago, June to September had the highest number of rides.  This is highlighted in the chart by creating an annotation of a yellow rectangle.
+
+The data type of column started_datetime is POSIXct and Double which is a DateTime
+
+```{r}
+class(cyclistic_data$started_datetime)
+
+typeof(cyclistic_data$started_datetime)
+```
+
+Data frame copy is created called cyclistic_data5
+
+```{r}
+
+cyclistic_data5 <- cyclistic_data
+```
+
+Month name for column started_datetime is included
+in the data frame
+
+```{r}
+
+cyclistic_data5$month_name <- 
+  month(ymd_hms(cyclistic_data5$started_datetime),
+        label=TRUE, abbr=FALSE)
+```
+
+
+```{r}
+season_rides <- cyclistic_data5 %>%
+                count(month_name, member_casual) %>% 
+                arrange(-n) 
+
+```
+
+
+```{r}
+knitr::kable(season_rides, "pipe")
+```
+
+
+```{r}
+ggplot(data=season_rides)+
+  geom_point(mapping =aes(x=month_name, y=n, color=member_casual,
+                          shape=member_casual))+
+  geom_smooth(mapping =aes(x=month_name, y=n))+
+  theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+
+  labs(title= "Seasons - Highest Rides", x="Months",
+       y="Number of Rides")+
+  scale_y_continuous(labels=comma) +
+  annotate("rect", xmin="June", xmax="September", ymin=340000, ymax=450000,
+           fill="yellow", color="yellow", alpha=0.3)
+```
+
+
+# **DAYS WITH HIGHEST NUMBER OF RIDES**
+
+This Scatter Plot displays number of rides taken for each day of the week during the year 2021 for
+both casual and member riders.
+
+The name of the day for each date in the column started_datetime has been included in the data frame.
+
+The size and shape of the data points for member riders are different from the casual riders.
+
+```{r}
+cyclistic_data5$day_name <- 
+  wday(ymd_hms(cyclistic_data5$started_datetime),
+        label=TRUE, abbr=FALSE)
+
+```
+
+```{r}
+day_rides <- cyclistic_data5 %>%
+             count(day_name, member_casual) %>% 
+             arrange(-n) 
+```
+
+```{r}
+knitr::kable(day_rides, "pipe")
+```
+
+```{r warning=FALSE}
+ggplot(data=day_rides)+
+  geom_point(mapping =aes(x=day_name, y=n, color=member_casual,
+                          shape=member_casual, size=member_casual))+
+  theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+
+  labs(title= "Days - Highest Rides", x="Days",
+       y="Number of Rides")+
+  scale_y_continuous(labels=comma)
+```
+
+
+
+# **TIMES WITH HIGHEST NUMBER OF RIDES**
+
+This Scatter Plot displays number of rides by 
+the time of day for both casual and member riders, during the year 2021.
+
+Time by hour for column started_datetime is included
+in the data frame.
+
+The geom_smooth function is used to show the regression line and patterns in the data.
+
+The facet_wrap function is used to display separate plots for member and casual riders which are subsets of the main dataset.  
+
+```{r}
+cyclistic_data5$hours <- 
+  hour(ymd_hms(cyclistic_data5$started_datetime))
+```
+
+```{r}
+time_of_rides <- cyclistic_data5 %>%
+                 count(hours, member_casual) %>% 
+                 arrange(-n) 
+```
+
+```{r}
+knitr::kable(time_of_rides, "pipe")
+```
+
+```{r}
+ggplot(data=time_of_rides)+
+  geom_point(mapping =aes(x=hours, y=n, color=member_casual,
+                          shape=member_casual))+
+  geom_smooth(mapping =aes(x=hours, y=n),
+              method="gam", formula=y~s(x))+
+  theme(axis.text.x=element_text(angle=90, vjust=0.5, hjust=1))+
+  labs(title= "Time of Day - Highest Rides", x="Time",
+       y="Number of Rides")+
+  scale_y_continuous(labels=comma)+
+  facet_wrap(~member_casual)
+```
+
