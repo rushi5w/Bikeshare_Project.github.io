@@ -1,8 +1,10 @@
-![image](https://user-images.githubusercontent.com/110440545/184634057-065086ac-5dc4-4ee5-966c-90a1dc33c120.png)
-![image](https://user-images.githubusercontent.com/110440545/184634103-afdeeba0-3ff1-4511-aca4-96a99a627e6d.png)
-![image](https://user-images.githubusercontent.com/110440545/184634316-3d95abb4-c703-4ff6-9e35-dbd7135f15c1.png)
-![image](https://user-images.githubusercontent.com/110440545/184634526-a2b79ed3-457f-439a-b8f6-f665a4f184cd.png)
+![image](https://user-images.githubusercontent.com/110440545/184645343-be8b3a19-80fa-4e03-9b55-31d722e91835.png)
 
-The following dashboards are saved in Tableau Public:
+ **Click on the below links to view the dashboards displayed in Tableau Public:**
 * **[Cyclistic Project Dashboard of Bike Rides by Season, Day & Time](https://public.tableau.com/views/CyclisticProjectDashboardofBikeRidesbySeasonDayTime/DashboardRidesbyMonthDayTime?:language=en-US&:display_count=n&:origin=viz_share_link)**
 * **[Cyclistic Project Map of Top 10 Bike Routes & Stations](https://public.tableau.com/views/CyclisticProjectMapofTop10BikeRoutesStations/DashboardMap?:language=en-US&:display_count=n&:origin=viz_share_link)**
+
+![image](https://user-images.githubusercontent.com/110440545/184645623-bd1e37f8-47c5-4609-ae41-67464c29f5d4.png)
+![image](https://user-images.githubusercontent.com/110440545/184645761-e47c29cf-2cf5-4082-be06-5f77e9eb8ffb.png)
+![image](https://user-images.githubusercontent.com/110440545/184645874-51917b56-0203-4a8f-9d9a-e31f91866d3e.png)
+![image](https://user-images.githubusercontent.com/110440545/184646258-d03503be-90ec-4501-9015-fe1748438c8d.png)
