@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/110440545/185351124-a89a0cde-1958-46dd-90aa-32007ee929a3.png)
 
-![image](https://user-images.githubusercontent.com/110440545/185356441-18f039da-2874-44f1-bad0-8118ac3979e0.png)
+![image](https://user-images.githubusercontent.com/110440545/185365878-4804ecf4-bced-45c4-84ed-e6e0157778a9.png)
 
  **Click this link to view the website I created displaying a digital portfolio of my data analytics projects:**
 * **[My Personal Website](???)**
