@@ -2,6 +2,9 @@
 
 ![image](https://user-images.githubusercontent.com/110440545/185356441-18f039da-2874-44f1-bad0-8118ac3979e0.png)
 
+ **Click this link to view the website I created displaying a digital portfolio of my data analytics projects:**
+* **[My Personal Website](???)**
+
  **Click the following links to view the dashboards I designed in Tableau Public:**
 * **[Cyclistic Project Dashboard of Bike Rides by Season, Day & Time](https://public.tableau.com/views/CyclisticProjectDashboardofBikeRidesbySeasonDayTime/DashboardRidesbyMonthDayTime?:language=en-US&:display_count=n&:origin=viz_share_link)**
 * **[Cyclistic Project Map of Top 10 Bike Routes & Stations](https://public.tableau.com/views/CyclisticProjectMapofTop10BikeRoutesStations/DashboardMap?:language=en-US&:display_count=n&:origin=viz_share_link)**
