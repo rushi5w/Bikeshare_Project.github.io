@@ -7,8 +7,9 @@
 * **[Cyclistic Project Map of Top 10 Bike Routes & Stations](https://public.tableau.com/views/CyclisticProjectMapofTop10BikeRoutesStations/DashboardMap?:language=en-US&:display_count=n&:origin=viz_share_link)**
 
 ![image](https://user-images.githubusercontent.com/110440545/185726991-c25112a3-2eb0-4afe-a399-3ab0485505fa.png)
-![image](https://user-images.githubusercontent.com/110440545/185727073-ed92d03e-7140-4304-9d28-0c7a215b6d1e.png)
+![image](https://user-images.githubusercontent.com/110440545/185727249-dc785ee3-2f60-4e5c-9157-a2558798fa8d.png)
 ![image](https://user-images.githubusercontent.com/110440545/185727170-cadd7d00-bfd3-45b4-8835-de7d67c7870d.png)
+![image](https://user-images.githubusercontent.com/110440545/185727279-ec5cfc92-896c-44f3-aca7-eae87d8f4490.png)
 
 
 
