@@ -6,4 +6,6 @@
 * **[Cyclistic Project Dashboard of Bike Rides by Season, Day & Time](https://public.tableau.com/views/CyclisticProjectDashboardofBikeRidesbySeasonDayTime/DashboardRidesbyMonthDayTime?:language=en-US&:display_count=n&:origin=viz_share_link)**
 * **[Cyclistic Project Map of Top 10 Bike Routes & Stations](https://public.tableau.com/views/CyclisticProjectMapofTop10BikeRoutesStations/DashboardMap?:language=en-US&:display_count=n&:origin=viz_share_link)**
 
-![image](https://user-images.githubusercontent.com/110440545/185726909-bb7843e2-f9a6-41da-9232-1279471634c3.png)
+![image](https://user-images.githubusercontent.com/110440545/185726991-c25112a3-2eb0-4afe-a399-3ab0485505fa.png)
+
+
