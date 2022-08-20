@@ -1,6 +1,6 @@
 ![image](https://user-images.githubusercontent.com/110440545/185351124-a89a0cde-1958-46dd-90aa-32007ee929a3.png)
 
-![image](https://user-images.githubusercontent.com/110440545/185743556-916217c1-6b78-4a6f-b18a-96c59a04f06f.png)
+![image](https://user-images.githubusercontent.com/110440545/185743744-22bf725e-f019-4b55-94d1-4a6f7e358434.png)
 
  **Click the following links to view the dashboards I designed in Tableau Public:**
 * **[Cyclistic Project Dashboard of Bike Rides by Season, Day & Time](https://public.tableau.com/views/CyclisticProjectDashboardofBikeRidesbySeasonDayTime/DashboardRidesbyMonthDayTime?:language=en-US&:display_count=n&:origin=viz_share_link)**
