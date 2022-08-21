@@ -2,10 +2,6 @@
 
 ![image](https://user-images.githubusercontent.com/110440545/185743800-bc432233-8c96-4b9c-ba3c-3e2d3f0479cc.png)
 
- **Click the following links to view the dashboards I designed in Tableau Public:**
-* **[Cyclistic Project Dashboard of Bike Rides by Season, Day & Time](https://public.tableau.com/views/CyclisticProjectDashboardofBikeRidesbySeasonDayTime/DashboardRidesbyMonthDayTime?:language=en-US&:display_count=n&:origin=viz_share_link)**
-* **[Cyclistic Project Map of Top 10 Bike Routes & Stations](https://public.tableau.com/views/CyclisticProjectMapofTop10BikeRoutesStations/DashboardMap?:language=en-US&:display_count=n&:origin=viz_share_link)**
-
 ![image](https://user-images.githubusercontent.com/110440545/185743670-7afd9b5f-644e-443f-8681-581eb5312b9c.png)
 ![image](https://user-images.githubusercontent.com/110440545/185744102-7414c285-fe04-489f-848e-24d38c781f4f.png)
 ![image](https://user-images.githubusercontent.com/110440545/185745239-f1fb739f-4202-4694-bfdc-1cc221624899.png)
@@ -45,3 +41,10 @@
 ![image](https://user-images.githubusercontent.com/110440545/185752631-d49a9f87-77d4-437b-bf84-4cecc39797a6.png)
 
 ![image](https://user-images.githubusercontent.com/110440545/185752682-d55009d0-8580-43eb-b157-90338272f6f3.png)
+
+
+ **Click the following links to view the dashboards I designed in Tableau Public:**
+* **[Cyclistic Project Dashboard of Bike Rides by Season, Day & Time](https://public.tableau.com/views/CyclisticProjectDashboardofBikeRidesbySeasonDayTime/DashboardRidesbyMonthDayTime?:language=en-US&:display_count=n&:origin=viz_share_link)**
+* **[Cyclistic Project Map of Top 10 Bike Routes & Stations](https://public.tableau.com/views/CyclisticProjectMapofTop10BikeRoutesStations/DashboardMap?:language=en-US&:display_count=n&:origin=viz_share_link)**
+
+
